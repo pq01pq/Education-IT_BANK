@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블 양식</title>
+</head>
+<body>
+	
+	<h1>html table example</h1>
+	<p>
+		table을 정의하는 태그 : &lt;table&gt;<br>
+		각 테이블 행을 정의하는 태그 : &lt;tr&gt;<br>	<!-- tr : table row -->
+		각 테이블 제목을 정의하는 태그 : &lt;th&gt;<br>	<!-- th : table header -->
+		각 테이블 열을 정의하는 태그 : &lt;td&gt;<br>	<!-- td : table data -->
+	</p>
+	
+	<table border="1" style="width:100%">
+		<tr> <th>성</th> <th>이름</th> <th>나이</th> </tr>
+		<tr> <td align="center">김</td> <td align="center">강사</td> <td align="center">28</td> </tr>
+		<tr> <td>이</td> <td>강오</td> <td>38</td> </tr>
+		<tr> <td>박</td> <td>강육</td> <td>48</td> </tr>
+	</table>
+	
+	<hr>
+	
+	<p>
+		열을 합치기 위한 속성 : colspan
+	</p>
+	<table border="1" style="width:100%">
+		<tr> <th>이름</th> <th colspan="2">전화번호</th> </tr>	<!-- colspan : 열 병합 -->
+		<tr> <td>김강사</td> <td>123</td> <td>4567</td> </tr>
+	</table>
+	
+	<p>
+		행을 합치기 위한 속성 : rowspan
+	</p>
+	<table border="1" style="width:100%">
+		<tr> <th>이름</th> <td>김강사</td> </tr>
+		<tr> <th rowspan="2">전화번호</th>	<td>123</td> </tr>
+		<tr>								<td>4567</td> </tr>
+	</table>
+	
+	<hr>
+	
+	<p>
+		테이블의 이름을 정의하는 태그 : &lt;caption&gt;<br>
+	</p>
+	<table border="1" style="width:100%">
+	
+		<caption align="center">
+			<font size="4">
+				<b>월별 저축액</b>
+			</font>
+		</caption>
+		<tr> <th>월</th> <th>저축액</th> </tr>
+		<tr> <td>1월</td> <td>100만원</td> </tr>
+		<tr> <td>2월</td> <td>80만원</td> </tr>
+	</table>
+	
+	<hr>
+	
+	<table align="center" border="1" bordercolor="red"
+	width="300" height="300" cellspacing="0" cellpadding="0">	<!-- cellpadding : 셀 여백 -->
+		<tr> <td rowspan="2" valign="top">0,0</td>	<td colspan="2">0,1</td> </tr>
+		<tr> 										<td>1,1</td> <td>1,2</td> </tr>
+		<tr> <td>2,0</td>							<td>2,1</td> <td>2,2</td> </tr>
+	</table>
+	
+	<hr>
+	
+	<div align="center">
+		<a href="/index.html">홈 | </a>
+		<a href="/Block/headings.html">제목 | </a>
+		<a href="/Block/paragraph.html">문단 | </a>
+		<a href="/Block/list.html">목록 | </a>
+		<a href="/Inline/inlineTag.html">인라인 | </a>
+		<a href="/Form/division.html">섹션 | </a>
+		<a href="/Form/table.html">테이블 | </a>
+		<a href="/Form/form.html">폼</a>
+	</div>
+	
+</body>
+</html>

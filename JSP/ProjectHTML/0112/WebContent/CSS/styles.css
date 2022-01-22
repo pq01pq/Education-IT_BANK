@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+body {
+	background-color: powderblue;
+}
+
+h1 {
+	color: blue;
+}
+
+p {
+	text-align: left;
+	color: red;
+}
+
+hr {
+	border-color: orange;
+	border-style: double;
+}
+
+/* # : id로 특정 태그 선택 */
+#p01 {
+	text-align: center;
+	color: green;
+}
+
+#p02 {
+	text-align: right;
+	color: blue;
+}
+
+/* . : 클래스를 지정 */
+.center {
+	text-align: center;
+	color: red;
+}
+
+/* 특정 태그에 소속된 클래스 지정 */
+p.center {
+	text-align: center;
+	color: green;
+}
+
+p.left {
+	text-align: left;
+	color: blue;
+}

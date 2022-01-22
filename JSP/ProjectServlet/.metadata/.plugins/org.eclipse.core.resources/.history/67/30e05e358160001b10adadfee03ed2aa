@@ -1,0 +1,31 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+	String subject = "JSP";
+	Date today = new Date();
+	SimpleDateFormat df = new SimpleDateFormat("yyyy년 mm월 dd일");
+	String schedule = df.format(today);
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>before include</h3>
+	<hr>
+	<jsp:include page="included.jsp" flush="false">
+		<%-- --%>
+		<jsp:param value="<%= subject %>" name="subject"/>
+		<jsp:param value="<%= schedule %>" name="schedule"/>
+	</jsp:include>
+	<!-- 다른 페이지로 제어정보를 모두 넘긴 후 다시돌아옴 -->
+	<!-- flush : 웹브라우저에게 데이터를 보낼 것인지 선택. false로 하면 파일에 데이터가 남음 -->
+	<hr>
+	<h3>after include</h3>
+</body>
+</html>

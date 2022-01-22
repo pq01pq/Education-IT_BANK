@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인라인 태그</title>
+</head>
+<body>
+	
+	<h1>html link</h1>
+	<p>
+		link를 정의하는 태그 : &lt;a&gt;	<!-- a : anchor -->
+		컨텐츠와 웹 문서를 연결해주는 태그
+	</p>
+	<!-- 외부 링크 -->
+	<a href="https://www.naver.com">네이버</a><br>	<!-- hyperlink reference -->
+	
+	<!-- 내부 링크 -->
+	<a href="0108.txt">어제 자료 복습</a>
+	
+	<!-- 이미지 파일 링크 -->
+	<h2>html images</h2>
+	<p>
+		이미지를 정의하는 태그 : &lt;img&gt;<br>
+		src : 이미지 소스 파일<br>
+		alt : 대체 문장
+	</p>
+	
+	<!-- 절대경로 -->
+	<a href="https://www.naver.com">
+		<img src="/Images/images.jpg"
+		alt="마음의 평화"
+		width="100"
+		height="100"><br>
+	</a><br>
+		
+	<!-- 상대경로 -->
+	<a href="https://www.naver.com">
+		<img src="../Images/images.jpg"
+		alt="마음의 평화"
+		width="100"
+		height="100"><br>
+	</a><br>
+	
+	<!-- ./는 생략 가능 -->
+	<a href="https://www.naver.com">
+		<img src=".Images/images.jpg"
+		alt="마음의 평화"
+		width="100"
+		height="100"><br>
+	</a><br>
+	
+	<!-- 잘못된 파일 경로 -->
+	<a href="https://www.naver.com">
+		<img src="/Images/image.jpg"
+		alt="마음의 평화"
+		width="100"
+		height="100"><br>
+	</a><br>
+	
+	<h2>html horizontal rule</h2>
+	<p>
+		수평선을 정의하는 태그 : &lt;hr&gt;<br>
+	</p>
+	<hr width="50" size="50"><br>	<!-- 픽셀 -->
+	<hr width="50" size="50" noshade="noshade"><br>	<!-- 음영 제거 -->
+	<hr width="50%" align="left" color="black">	<!-- % : 화면대비 크기 -->
+	<hr width="50%" align="center" color="pink">
+	<hr width="50%" align="right" color="#777777">	<!-- # R : 2 hex / G : 2 hex / B : 2 hex-->
+	<hr color="#aa33aa">
+	
+	<p>
+		hello html!!!<br>
+		hello html!!!<br>	<!-- nbsp : non break space -->
+		&nbsp;&nbsp;hello html!!!<br>
+		&nbsp;&nbsp;&nbsp;hello html!!!<br>
+	</p>
+	
+	<hr>
+	
+	<div align="center">
+		<a href="/index.html">홈 | </a>
+		<a href="/Block/headings.html">제목 | </a>
+		<a href="/Block/paragraph.html">문단 | </a>
+		<a href="/Block/list.html">목록 | </a>
+		<a href="/Inline/inlineTag.html">인라인 | </a>
+		<a href="/Form/division.html">섹션 | </a>
+		<a href="/Form/table.html">테이블 | </a>
+		<a href="/Form/form.html">폼</a>
+	</div>
+	
+</body>
+</html>

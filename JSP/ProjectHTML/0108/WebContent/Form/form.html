@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼 양식</title>
+</head>
+<body>
+	
+	<!-- 체크리스트 작성 -->
+	
+	<h2>input - text</h2>
+	
+	<input type="text" size="20" maxlength="10" name="user" value="kim">
+	<input type="text" size="10" maxlength="5" name="user" placeholder="이름 입력">
+	<!-- name : 변수명, value : 기본 입력값, placeholder : 기본 입력값을 예시로 표시 -->
+	<hr>
+	
+	<h2>input - password</h2>
+	
+	<input type="password" name="password" size="20" placeholder="비밀번호">
+	
+	<hr>
+	
+	<h2>input - checkbox</h2>
+	
+	<input type="checkbox" name="check" value="book" checked>독서<br>
+	<input type="checkbox" name="check" value="swim">수영<br>
+	<input type="checkbox" name="check" value="cycle">자전거<br>
+	<!-- checked : 기본값을 체크된 상태로 설정 -->
+	
+	<hr>
+	
+	<h2>input - radio</h2>	<!-- 중복체크 비허용 -->
+	
+	<input type="radio" name="hobby" value="book" checked>독서<br>
+	<input type="radio" name="hobby" value="swim">수영<br>
+	<input type="radio" name="hobby" value="cycle">자전거<br>
+	
+	<hr>
+	
+	<h2>input - submit</h2>
+	
+	<input type="submit" value="전송">
+	<input type="reset" value="취소">
+	
+	<hr>
+	
+	<h2>input - button</h2>
+	
+	<input type="button" value="실행">
+	<input type="image" src="Images/images.jpg">
+	
+	<h2>textarea</h2>
+	
+	<textarea name="content" rows="5" cols="30"></textarea>
+	
+	<hr>
+	
+	<h2>select</h2>
+	<select name="meat" size="5" multiple="multiple">
+		<option value="beef">소고기</option>
+		<option value="pork">돼지고기</option>
+		<option value="chicken">닭고기</option>
+		<option value="bird">참새고기</option>
+		<option value="fish">물고기</option>
+	</select>
+	
+	<hr>
+	
+	<div align="center">
+		<a href="/index.html">홈 | </a>
+		<a href="/Block/headings.html">제목 | </a>
+		<a href="/Block/paragraph.html">문단 | </a>
+		<a href="/Block/list.html">목록 | </a>
+		<a href="/Inline/inlineTag.html">인라인 | </a>
+		<a href="/Form/division.html">섹션 | </a>
+		<a href="/Form/table.html">테이블 | </a>
+		<a href="/Form/form.html">폼</a>
+	</div>
+	
+</body>
+</html>

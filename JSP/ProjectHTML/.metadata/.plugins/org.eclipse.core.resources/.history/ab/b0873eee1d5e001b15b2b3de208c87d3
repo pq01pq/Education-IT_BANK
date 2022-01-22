@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		/* * : 세부적으로 지정한 스타일 외에 모든 스타일 적용 */
+/* 		* {
+			text-align: right;
+			color: green;
+		} */
+		h1, h2 {
+			text-align: center;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+ 	<h1 style="font-family: serif;">this is a heading</h1>
+	<p style="color: blue;">
+		this is a paragraph
+	</p>
+	
+	<h1>this is a heading</h1>
+	<p>
+		this is a paragraph
+	</p>
+	
+	<hr>
+	
+	<h2>this is a second level headings</h2>
+	<p>
+		this is a paragraph without style policy
+	</p>
+	
+</body>
+</html>

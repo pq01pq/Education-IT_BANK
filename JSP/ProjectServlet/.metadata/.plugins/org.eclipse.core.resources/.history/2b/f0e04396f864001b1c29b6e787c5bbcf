@@ -1,0 +1,22 @@
+<%@page import="java.util.HashMap"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	HashMap<String, String> ssMap = new HashMap<String, String>();
+	ssMap.put("id", "kks");
+	ssMap.put("pw", "1234");
+	session.setAttribute("info", ssMap);
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>session el example</h2>
+	표현식 : <%= (String)ssMap.get("id") %><br>
+	el : ${ info.pw }<br>
+	el : ${ info['pw'] }
+</body>
+</html>

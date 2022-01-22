@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	String javaStr = "java";
+	servletContext.setAttribute("jsp", "jsp는 재미있다");
+	servletContext.setAttribute("real", "레알??");
+	
+	servletContext.setAttribute("fruit", new String[] {"사과", "배", "딸기", "감"});
+	String[] fruits = (String[]) pageContext.getAttribute("fruit");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

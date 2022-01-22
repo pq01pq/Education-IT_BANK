@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.mvc.board.repository.IBoardMapper">
+
+	<!-- DB 컬럼명과 VO 클래스의 필드명 맵팽 작업 -->
+	<resultMap id="BoardMap"
+		type="com.spring.mvc.board.model.BoardVO">
+		<id property="boardNo" column="board_no" />
+		<result property="title" column="title" />
+		<result property="writer" column="writer" />
+		<result property="regDate" column="reg_date" />
+		<result property="content" column="content" />
+		<result property="viewCnt" column="view_cnt" />
+	</resultMap>
+
+	<insert id="insert">
+		insert into mvc_board
+		(board_no,title,content,writer)
+		values(board_seq.NEXTVAL,#{title},#{content},#{writer})
+	</insert>
+
+	<select id="getArticle" resultMap="BoardMap">
+		select * from mvc_board
+		where board_no=#{boardNo}
+	</select>
+
+	<update id="update">
+		update mvc_board
+		set title=#{title},content=#{content}
+		where board_no=#{boardNo}
+	</update>
+
+	<delete id="delete">
+		delete from mvc_board
+		where board_no=#{boardNo}
+	</delete>
+	
+	<!-- 중복되는 동적 SQL문에 대한 처리 -->
+	<sql id="search">
+		<!-- 동적 SQL 구문 -->
+		<if test="condition == 'title'">
+			WHERE title LIKE '%'||#{keyword}||'%'
+		</if>
+		<if test="condition == 'writer'">
+			WHERE writer LIKE '%'||#{keyword}||'%'
+		</if>
+		<if test="condition == 'content'">
+			WHERE content LIKE '%'||#{keyword}||'%'
+		</if>
+		<if test="condition == 'titleContent'">
+			WHERE title LIKE '%'||#{keyword}||'%'
+			OR content LIKE '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	
+	<!-- 쿼리문을 작성할 때 '<', '>', '&' 등의 기호를 사용해야 하는 경우가 생기는데,
+	xml 파일에서 이를 그냥 사용할 경우 태그로 인식하는 경우가 종종 있음.
+	이럴 경우에는 해당 기호가 태그문법이 아닌 실제 쿼리에 필요한 코드라고 인식시켜야 함.
+	이 때 사용하는 문법이 <![CDATA[...쿼리...]]> CDATA 안에 쿼리를 작성하면
+	쿼리 내용의 괄호나 특수문자를 xml 문법으로 인식하지 않고 문자열로 인식함. -->
+
+	<select id="getArticleList" resultMap="BoardMap">
+		select * from
+		(
+			select rownum as rn, tbl.* from
+			(
+				select * from mvc_board
+				<include refid="search"/>
+				order by board_no desc
+			) tbl
+		)
+		<![CDATA[
+			where rn > (#{page} - 1) * #{countPerPage}
+			and rn <= #{page} * #{countPerPage}
+		]]>
+	</select>
+
+	<select id="countArticles" resultType="int">
+		select count(*) from mvc_board
+		<include refid="search"/>
+	</select>
+	
+	<update id="updateViewCnt">
+		update mvc_board set view_cnt = view_cnt + 1
+		where board_no=#{boardNo}
+	</update>
+	
+	<!--
+	<select id="getArticleListByTitle" resultMap="BoardMap">
+		select * from
+		(
+			select rownum as rn, tbl.* from
+			(
+				select * from mvc_board
+				WHERE title LIKE '%'||#{keyword}||'%'
+				order by board_no desc
+			) tbl
+		)
+		<![CDATA[
+			where rn > (#{page} - 1) * #{countPerPage}
+			and rn <= #{page} * #{countPerPage}
+		]]>
+	</select>
+
+	<select id="countArticlesByTitle" resultType="int">
+		select count(*)
+		from mvc_board
+		where title like '%'||#{keyword}||'%'
+	</select>
+	-->
+</mapper>
